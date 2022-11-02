@@ -1,0 +1,30 @@
+.tache {
+    display: flex;
+    background-color: white;
+    color: black;
+    width: 22.2em;
+    border-style: groove;
+    margin-left: -1em;
+
+    .delete {
+        color: red;
+        font-size: 1.2em;
+        float: right;
+        font-weight: bold;
+        width: 2em;
+        margin: 0;
+        padding: 0.5em 0;
+
+        &:hover {
+            cursor: pointer;
+            color: #EC7063; 
+        }
+    }
+
+    .description{
+        width: 20em;
+        height: auto;
+        margin-top: 0em;
+        padding: 0.3em;
+    }
+}

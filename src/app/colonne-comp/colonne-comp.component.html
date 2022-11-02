@@ -1,0 +1,22 @@
+<div class="colonne">
+
+    <div class="bloc-flex">
+        <h2>{{ colonne.titre }}</h2>
+        <p (click)="onDeleteColonne()">X</p>
+    </div>
+    
+    <div class="add">
+        <input type="text" [(ngModel)]="description" placeholder="Nouvelle tâche"/>
+        <button (click)="onAddTask(colonne.id)">Créer</button>   
+    </div>
+
+    <div 
+        cdkDropList
+        [cdkDropListData]="colonne.taches"
+        class="board"
+        cdkDropListSortingDisabled
+        (cdkDropListDropped)="drop($event)">
+        <app-tache-comp [colonne]="colonne" *ngFor="let tache of colonne.taches" [tache]="tache" cdkDrag></app-tache-comp>
+    </div>
+
+</div>
