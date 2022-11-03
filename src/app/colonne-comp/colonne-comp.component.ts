@@ -4,6 +4,12 @@ import { Colonne } from '../Models/colonne.model';
 import { Tache } from '../Models/tache.model';
 import { TacheService } from './tache.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
+
+export interface DialogData {
+  description: string;
+}
 
 @Component({
   selector: 'app-colonne-comp',
@@ -17,7 +23,7 @@ export class ColonneCompComponent implements OnInit {
 
   @Input() colonne!: Colonne;
   
-  constructor(private colonneService: ColServiceService) {}
+  constructor(private colonneService: ColServiceService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
   }
@@ -43,5 +49,16 @@ export class ColonneCompComponent implements OnInit {
       );
     }
   }
-  
+
+  onEdit(): void{
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '250px',
+      data: {description: this.description},
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('vsvfsv');
+      this.description = result;
+    })
+  }
+
 }

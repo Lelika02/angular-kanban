@@ -10,6 +10,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogModifComponent } from './dialog-modif/dialog-modif.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './modal/modal.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ModalComponent } from './modal/modal.component';
     DragDropModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
