@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 
 export interface DialogData {
-  description: string;
+  descriptionCol: string;
 }
 
 @Component({
@@ -19,6 +19,7 @@ export interface DialogData {
 export class ColonneCompComponent implements OnInit {
 
   id: number = 0;
+  descriptionCol!: string;
   description!: string;
 
   @Input() colonne!: Colonne;
@@ -53,11 +54,11 @@ export class ColonneCompComponent implements OnInit {
   onEdit(): void{
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '250px',
-      data: {description: this.description},
+      data: {descriptionCol: this.descriptionCol},
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('vsvfsv');
-      this.description = result;
+      this.descriptionCol = result;
     })
   }
 

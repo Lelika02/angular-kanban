@@ -1,7 +1,8 @@
 <div class="colonne">
 
     <div class="bloc-flex">
-        <h2>{{ colonne.titre }}</h2>
+        <h2 *ngIf="descriptionCol">{{ descriptionCol }}</h2>
+        <h2 *ngIf="!descriptionCol">{{ colonne.titre }}</h2>
         <Button (click)="onEdit()">Edit</Button>
         <p (click)="onDeleteColonne()">X</p>
     </div>

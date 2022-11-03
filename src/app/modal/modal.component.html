@@ -3,10 +3,10 @@
   <p>Veuillez saisir une description</p>
   <mat-form-field>
     <mat-label>Description</mat-label>
-    <input matInput [(ngModel)]="data.description">
+    <input matInput [(ngModel)]="data.descriptionCol">
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button mat-dialog-close>Annuler</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Modifier</button>
+  <button mat-button [mat-dialog-close]="data.descriptionCol" cdkFocusInitial>Modifier</button>
 </mat-dialog-actions>
